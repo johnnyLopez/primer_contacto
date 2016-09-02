@@ -1,0 +1,28 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	
+	<SelectDialog
+		id="list_parte"
+		title="Seleccione Parte"
+		class="sapUiPopupWithPadding"
+		
+		items="{
+			path : 'ParteSet',
+			
+			sorter : {
+				path : 'Grupoc',
+				group : true
+			}
+		}"
+		
+		search="f_search_grupocod"
+		confirm="f_confirm_parte"
+		cancel="f_confirm_parte"
+		>
+		
+		<StandardListItem
+			title="{Grupoc}||{Code}"
+			description="{Descod}" />
+	</SelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,80 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" xmlns:smart="sap.ui.comp.smartfield" xmlns="sap.m" controllerName="com.corona.controller.CreateEntity">
+	<semantic:DetailPage id="page" navButtonPress="onNavBack" title="{viewModel>/viewTitle}" busy="{viewModel>/busy}">
+		<semantic:content>
+			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" id="newEntitySimpleForm" labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" title="{= ${viewModel>/mode} === 'edit'? 'Datos generales del Aviso': 'New ZGWSD_PRIMERCONTACTO_SRV.Avisos'}">
+				<f:content>
+					<Label text="# Aviso"/>
+					<Input name="Qmnum" id="Qmnum_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="{= ${viewModel>/mode} === 'edit'? false: true}" visible="true" value="{ path: 'Qmnum', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:12, nullable:false } }"/>
+					<Label text="Status usuario" required="true"/>
+					<Input id="txt_status_usr" value="{Statusr}" class="sapUiSmallMarginBottom" type="Text" placeholder="Seleccione Status" enabled="true" editable="true" showValueHelp="true" valueHelpRequest="handleValueHelp"/>
+
+					<Label text="Prioridad" required="true"/>
+					<Select id="cmb_prioridad" items="{PrioridadSet}" width="100%">
+						<core:Item key="{Priok}" text="{Priokx}"/>
+					</Select>
+					<Label text="Tipo Usuario" required="true"/>
+					<Select id="cmb_tip_usr" items="{TipoUsuarioSet}" width="100%">
+						<core:Item key="{Code}" text="{Text}"/>
+					</Select>
+					<Label text="Primero Contacto"/>
+					<CheckBox id="primer_contac"/>
+					<Label text="PtoTbjo" required="true"/>
+					<Input name="Arbpl" id="Arbpl_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="{= ${viewModel>/mode} === 'edit'? false: true}" visible="false" value="{ path: 'Arbpl', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:8, nullable:false } }"/>
+					<Label text="Ctro.p.pto.tbj." required="true"/>
+					<Input name="Werks" id="Werks_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="{= ${viewModel>/mode} === 'edit'? false: true}" visible="false" value="{ path: 'Werks', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:4, nullable:false } }"/>
+					<Label text="Clase de aviso" required="true"/>
+					<Input name="Qmart" id="Qmart_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="{= ${viewModel>/mode} === 'edit'? false: true}" visible="false" value="{ path: 'Qmart', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:2, nullable:false } }"/>
+					<Label text="Cl.prioridad" required="true"/>
+					<Input name="Artpr" id="Artpr_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="{= ${viewModel>/mode} === 'edit'? false: true}" visible="false" value="{ path: 'Artpr', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:2, nullable:false } }"/>
+					<Label text="Calle" required="true"/>
+					<Input name="Street" id="Street_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="true" visible="true" value="{ path: 'Street', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:60, nullable:false } }"/>
+					<Label text="Fecha de aviso" required="true"/>
+					<DatePicker name="Qmdat" value="{ path: 'Qmdat', type: 'sap.ui.model.type.DateTime'}" id="Qmdat_id" type="DateTime" enabled="{= ${viewModel>/mode} === 'edit'? false: true}" visible="false"/>
+					<Label text="Hora del aviso" required="true"/>
+					<Input name="Mzeit" id="Mzeit_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="{= ${viewModel>/mode} === 'edit'? false: true}" visible="false" value="{ path: 'Mzeit', type: 'sap.ui.model.odata.type.Time' , constraints:{ nullable:false } }"/>
+					<Label text="Descripción" required="true"/>
+					<Input name="Qmtxt" id="Qmtxt_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="{= ${viewModel>/mode} === 'edit'? false: true}" visible="false" value="{ path: 'Qmtxt', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:40, nullable:false } }"/>
+					<Label text="Nombre 2" required="true"/>
+					<Input name="Name2" id="Name2_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="true" visible="true" value="{ path: 'Name2', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:40, nullable:false } }"/>
+					<Label text="Perfil catálogo" required="true"/>
+					<Input name="Rbnr" id="Rbnr_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="{= ${viewModel>/mode} === 'edit'? false: true}" visible="false" value="{ path: 'Rbnr', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:9, nullable:false } }"/>
+					<Label text="Nombre" required="true"/>
+					<Input name="Name1" id="Name1_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="true" visible="true" value="{ path: 'Name1', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:40, nullable:false } }"/>
+					<Label text="Grupo códigos" required="true"/>
+					<Input name="Qmgrp" id="Qmgrp_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="true" visible="false" value="{ path: 'Qmgrp', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:8, nullable:false } }"/>
+					<Label text="Nº dirección" required="true"/>
+					<Input name="Adrnr" id="Adrnr_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="{= ${viewModel>/mode} === 'edit'? false: true}" visible="false" value="{ path: 'Adrnr', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:10, nullable:false } }"/>
+				</f:content>
+			</f:SimpleForm>
+			
+			<f:SimpleForm class="editableForm" editable="true" id="dat_direccion" layout="ResponsiveGridLayout" minWidth="1024" title="">
+				<f:content>
+					<Panel class="sapUiResponsiveMargin" width="auto" headerText="Dirección aviso" expandable="true" expanded="false">
+						<content>
+							<Label text="Celular" required="true"/>
+							<Input name="Celu" id="Celu_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="true" visible="true" value="{ path: 'Celu', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:30, nullable:false } }"/>
+							<Label text="Teléfono" required="true"/>
+							<Input name="Tele" id="Tele_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="true" visible="true" value="{ path: 'Tele', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:30, nullable:false } }"/>
+							<Label text="Población" required="true"/>
+							<Input name="City1" id="City1_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="{= ${viewModel>/mode} === 'edit'? false: true}" visible="true" value="{ path: 'City1', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:40, nullable:false } }"/>
+							<Label text="Calle 3" required="true"/>
+							<Input name="Street2" id="Street2_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="true" visible="true" value="{ path: 'Street2', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:40, nullable:false } }"/>
+						</content>
+					</Panel>
+					<Panel class="sapUiResponsiveMargin" headerText="Historial" expandable="true" expanded="false">
+						<content/>
+					
+						<TextArea width="100%" name="Bita" id="Bita_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="false" visible="true" value="{ path: 'Bita', type: 'sap.ui.model.odata.type.String' , constraints:{ nullable:false } }"/>
+						<TextArea width="100%"  name="Bita" id="Bita_edit" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="true" visible="true" value=""/>	
+					</Panel>
+				</f:content>
+			</f:SimpleForm>
+		</semantic:content>
+		<semantic:saveAction>
+			<semantic:SaveAction id="save" enabled="{viewModel>/enableCreate}" press="onSave"/>
+		</semantic:saveAction>
+		<semantic:cancelAction>
+			<semantic:CancelAction id="cancel" press="onCancel"/>
+		</semantic:cancelAction>
+	</semantic:DetailPage>
+</mvc:View>

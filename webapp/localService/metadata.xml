@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0"
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:DataServices m:DataServiceVersion="2.0"
+        xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+        <Schema Namespace="ZGWSD_PRIMERCONTACTO_SRV" xml:lang="es"
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Avisos" sap:content-version="1"
+                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                <Key>
+                    <PropertyRef Name="Arbpl"/>
+                    <PropertyRef Name="Werks"/>
+                    <PropertyRef Name="Qmnum"/>
+                    <PropertyRef Name="Qmart"/>
+                    <PropertyRef Name="Artpr"/>
+                    <PropertyRef Name="Rbnr"/>
+                    <PropertyRef Name="Qmgrp"/>
+                </Key>
+                <Property Name="Bita" Type="Edm.String" Nullable="false" sap:label="Bitácora Aviso" sap:creatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Celu" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Celular" sap:creatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tele" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Teléfono" sap:creatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="City1" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Población" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Arbpl" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="PtoTbjo" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Ctro.p.pto.tbj." sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Street2" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Calle 3" sap:creatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Qmnum" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Aviso" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Qmart" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Clase de aviso" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Artpr" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Cl.prioridad" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Street" Type="Edm.String" Nullable="false" MaxLength="60" sap:label="Calle" sap:creatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Qmdat" Type="Edm.DateTime" Nullable="false" sap:label="Fecha de aviso" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Mzeit" Type="Edm.Time" Nullable="false" sap:label="Hora del aviso" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Qmtxt" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Descripción" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Name2" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Nombre 2" sap:creatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Rbnr" Type="Edm.String" Nullable="false" MaxLength="9" sap:label="Perfil catálogo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Statusr" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Status usuario" sap:creatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Priori" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Prioridad" sap:creatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Nombre" sap:creatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Qmgrp" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Grupo códigos" sap:creatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Qmcod" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Codificación" sap:creatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Adrnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Nº dirección" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ParteSet" Relationship="ZGWSD_PRIMERCONTACTO_SRV.ParteAviso" FromRole="FromRole_ParteAviso" ToRole="ToRole_ParteAviso"/>
+                <NavigationProperty Name="SintomaSet" Relationship="ZGWSD_PRIMERCONTACTO_SRV.SintomaAviso" FromRole="FromRole_SintomaAviso" ToRole="ToRole_SintomaAviso"/>
+                <NavigationProperty Name="PrioridadSet" Relationship="ZGWSD_PRIMERCONTACTO_SRV.PrioridadAviso" FromRole="FromRole_PrioridadAviso" ToRole="ToRole_PrioridadAviso"/>
+                <NavigationProperty Name="ConjuntosAviso" Relationship="ZGWSD_PRIMERCONTACTO_SRV.AvisoConjunto" FromRole="FromRole_AvisoConjunto" ToRole="ToRole_AvisoConjunto"/>
+                <NavigationProperty Name="StatusSet" Relationship="ZGWSD_PRIMERCONTACTO_SRV.StatusAviso" FromRole="FromRole_StatusAviso" ToRole="ToRole_StatusAviso"/>
+                <NavigationProperty Name="TipoUsuarioSet" Relationship="ZGWSD_PRIMERCONTACTO_SRV.AvisoTipUsr" FromRole="FromRole_AvisoTipUsr" ToRole="ToRole_AvisoTipUsr"/>
+            </EntityType>
+            <EntityType Name="Status" sap:content-version="1"
+                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                <Key>
+                    <PropertyRef Name="Estat"/>
+                    <PropertyRef Name="Stsma"/>
+                    <PropertyRef Name="Qmart"/>
+                </Key>
+                <Property Name="Txt30" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Txt04" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Estat" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Status usuario" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stsma" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Esquema status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Qmart" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Clase de aviso" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="Avisos" Relationship="ZGWSD_PRIMERCONTACTO_SRV.StatusAviso" FromRole="ToRole_StatusAviso" ToRole="FromRole_StatusAviso"/>
+            </EntityType>
+            <EntityType Name="Conjunto" sap:content-version="1"
+                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                <Key>
+                    <PropertyRef Name="Bautl"/>
+                    <PropertyRef Name="Idpos"/>
+                    <PropertyRef Name="Qmnum"/>
+                </Key>
+                <Property Name="Canti" Type="Edm.Int32" Nullable="false" sap:label="Número defectos" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bautx" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Denominación" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Bautl" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Conjunto" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Idpos" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Número clasif." sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Qmnum" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Aviso" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Otgrp" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Grupo códigos" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Oteil" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Cód.parte obj." sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Txtcdot" Type="Edm.String" Nullable="false" MaxLength="80" sap:label="Txt CódPartObj." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fegrp" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Grupo códigos" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fecod" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Código averia" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Txtcdfe" Type="Edm.String" Nullable="false" MaxLength="80" sap:label="Texto de avería" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ConjuntAviso" Relationship="ZGWSD_PRIMERCONTACTO_SRV.AvisoConjunto" FromRole="ToRole_AvisoConjunto" ToRole="FromRole_AvisoConjunto"/>
+            </EntityType>
+            <EntityType Name="Material" sap:content-version="1"
+                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                <Key>
+                    <PropertyRef Name="Werks"/>
+                    <PropertyRef Name="Matnr"/>
+                </Key>
+                <Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Centro" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Maktx" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Denominación" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Organiz.ventas" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vtweg" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Canal distrib." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mtart" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Tipo material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Prioridad" sap:content-version="1"
+                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                <Key>
+                    <PropertyRef Name="Artpr"/>
+                    <PropertyRef Name="Priok"/>
+                </Key>
+                <Property Name="Artpr" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Cl.prioridad" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Priok" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Prioridad" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Priokx" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Prioridad" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="Avisos" Relationship="ZGWSD_PRIMERCONTACTO_SRV.PrioridadAviso" FromRole="ToRole_PrioridadAviso" ToRole="FromRole_PrioridadAviso"/>
+            </EntityType>
+            <EntityType Name="Sintoma" sap:content-version="1"
+                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                <Key>
+                    <PropertyRef Name="Rbnr"/>
+                    <PropertyRef Name="Grupoc"/>
+                    <PropertyRef Name="Code"/>
+                </Key>
+                <Property Name="Rbnr" Type="Edm.String" Nullable="false" MaxLength="9" sap:label="Perfil catálogo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Grupoc" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Grupo códigos" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Code" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Código" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Descod" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="TxtBreveCódigo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="Avisos" Relationship="ZGWSD_PRIMERCONTACTO_SRV.SintomaAviso" FromRole="ToRole_SintomaAviso" ToRole="FromRole_SintomaAviso"/>
+            </EntityType>
+            <EntityType Name="Parte" sap:content-version="1"
+                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                <Key>
+                    <PropertyRef Name="Rbnr"/>
+                    <PropertyRef Name="Grupoc"/>
+                    <PropertyRef Name="Code"/>
+                </Key>
+                <Property Name="Rbnr" Type="Edm.String" Nullable="false" MaxLength="9" sap:label="Perfil catálogo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Grupoc" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Grupo códigos" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Code" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Código" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Descod" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="TxtBreveCódigo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="Avisos" Relationship="ZGWSD_PRIMERCONTACTO_SRV.ParteAviso" FromRole="ToRole_ParteAviso" ToRole="FromRole_ParteAviso"/>
+            </EntityType>
+            <EntityType Name="Centro" sap:content-version="1"
+                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                <Key>
+                    <PropertyRef Name="Werks"/>
+                </Key>
+                <Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Centro" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Nombre 1" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="PuestoTrabajo" sap:content-version="1"
+                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                <Key>
+                    <PropertyRef Name="Werks"/>
+                    <PropertyRef Name="Arbpl"/>
+                </Key>
+                <Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Centro" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Arbpl" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Puesto trabajo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Denomi" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Denomin." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="TipoUsuario" sap:content-version="1"
+                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                <Key>
+                    <PropertyRef Name="Code"/>
+                    <PropertyRef Name="Qmgrp"/>
+                </Key>
+                <Property Name="Text" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="TxtBreveCódigo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Code" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Código" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Qmgrp" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Grupo códigos" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="Avisos" Relationship="ZGWSD_PRIMERCONTACTO_SRV.AvisoTipUsr" FromRole="ToRole_AvisoTipUsr" ToRole="FromRole_AvisoTipUsr"/>
+            </EntityType>
+            <Association Name="StatusAviso" sap:content-version="1"
+                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                <End Type="ZGWSD_PRIMERCONTACTO_SRV.Avisos" Multiplicity="1" Role="FromRole_StatusAviso"/>
+                <End Type="ZGWSD_PRIMERCONTACTO_SRV.Status" Multiplicity="*" Role="ToRole_StatusAviso"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_StatusAviso">
+                        <PropertyRef Name="Qmgrp"/>
+                        <PropertyRef Name="Rbnr"/>
+                        <PropertyRef Name="Artpr"/>
+                        <PropertyRef Name="Qmart"/>
+                        <PropertyRef Name="Qmnum"/>
+                        <PropertyRef Name="Werks"/>
+                        <PropertyRef Name="Arbpl"/>
+                    </Principal>
+                    <Dependent Role="ToRole_StatusAviso">
+                        <PropertyRef Name="Qmart"/>
+                        <PropertyRef Name="Qmart"/>
+                        <PropertyRef Name="Qmart"/>
+                        <PropertyRef Name="Qmart"/>
+                        <PropertyRef Name="Qmart"/>
+                        <PropertyRef Name="Qmart"/>
+                        <PropertyRef Name="Qmart"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="AvisoConjunto" sap:content-version="1"
+                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                <End Type="ZGWSD_PRIMERCONTACTO_SRV.Avisos" Multiplicity="1" Role="FromRole_AvisoConjunto"/>
+                <End Type="ZGWSD_PRIMERCONTACTO_SRV.Conjunto" Multiplicity="*" Role="ToRole_AvisoConjunto"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_AvisoConjunto">
+                        <PropertyRef Name="Arbpl"/>
+                        <PropertyRef Name="Qmgrp"/>
+                        <PropertyRef Name="Qmnum"/>
+                        <PropertyRef Name="Qmart"/>
+                        <PropertyRef Name="Artpr"/>
+                        <PropertyRef Name="Rbnr"/>
+                        <PropertyRef Name="Werks"/>
+                    </Principal>
+                    <Dependent Role="ToRole_AvisoConjunto">
+                        <PropertyRef Name="Qmnum"/>
+                        <PropertyRef Name="Qmnum"/>
+                        <PropertyRef Name="Qmnum"/>
+                        <PropertyRef Name="Qmnum"/>
+                        <PropertyRef Name="Qmnum"/>
+                        <PropertyRef Name="Qmnum"/>
+                        <PropertyRef Name="Qmnum"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="PrioridadAviso" sap:content-version="1"
+                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                <End Type="ZGWSD_PRIMERCONTACTO_SRV.Avisos" Multiplicity="1" Role="FromRole_PrioridadAviso"/>
+                <End Type="ZGWSD_PRIMERCONTACTO_SRV.Prioridad" Multiplicity="*" Role="ToRole_PrioridadAviso"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_PrioridadAviso">
+                        <PropertyRef Name="Arbpl"/>
+                        <PropertyRef Name="Werks"/>
+                        <PropertyRef Name="Qmnum"/>
+                        <PropertyRef Name="Qmart"/>
+                        <PropertyRef Name="Artpr"/>
+                        <PropertyRef Name="Rbnr"/>
+                        <PropertyRef Name="Qmgrp"/>
+                    </Principal>
+                    <Dependent Role="ToRole_PrioridadAviso">
+                        <PropertyRef Name="Artpr"/>
+                        <PropertyRef Name="Artpr"/>
+                        <PropertyRef Name="Artpr"/>
+                        <PropertyRef Name="Artpr"/>
+                        <PropertyRef Name="Artpr"/>
+                        <PropertyRef Name="Artpr"/>
+                        <PropertyRef Name="Artpr"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="SintomaAviso" sap:content-version="1"
+                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                <End Type="ZGWSD_PRIMERCONTACTO_SRV.Avisos" Multiplicity="1" Role="FromRole_SintomaAviso"/>
+                <End Type="ZGWSD_PRIMERCONTACTO_SRV.Sintoma" Multiplicity="*" Role="ToRole_SintomaAviso"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_SintomaAviso">
+                        <PropertyRef Name="Artpr"/>
+                        <PropertyRef Name="Qmart"/>
+                        <PropertyRef Name="Qmnum"/>
+                        <PropertyRef Name="Werks"/>
+                        <PropertyRef Name="Arbpl"/>
+                        <PropertyRef Name="Rbnr"/>
+                        <PropertyRef Name="Qmgrp"/>
+                    </Principal>
+                    <Dependent Role="ToRole_SintomaAviso">
+                        <PropertyRef Name="Rbnr"/>
+                        <PropertyRef Name="Rbnr"/>
+                        <PropertyRef Name="Rbnr"/>
+                        <PropertyRef Name="Rbnr"/>
+                        <PropertyRef Name="Rbnr"/>
+                        <PropertyRef Name="Rbnr"/>
+                        <PropertyRef Name="Rbnr"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ParteAviso" sap:content-version="1"
+                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                <End Type="ZGWSD_PRIMERCONTACTO_SRV.Avisos" Multiplicity="1" Role="FromRole_ParteAviso"/>
+                <End Type="ZGWSD_PRIMERCONTACTO_SRV.Parte" Multiplicity="*" Role="ToRole_ParteAviso"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ParteAviso">
+                        <PropertyRef Name="Qmgrp"/>
+                        <PropertyRef Name="Rbnr"/>
+                        <PropertyRef Name="Arbpl"/>
+                        <PropertyRef Name="Werks"/>
+                        <PropertyRef Name="Qmnum"/>
+                        <PropertyRef Name="Qmart"/>
+                        <PropertyRef Name="Artpr"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ParteAviso">
+                        <PropertyRef Name="Rbnr"/>
+                        <PropertyRef Name="Rbnr"/>
+                        <PropertyRef Name="Rbnr"/>
+                        <PropertyRef Name="Rbnr"/>
+                        <PropertyRef Name="Rbnr"/>
+                        <PropertyRef Name="Rbnr"/>
+                        <PropertyRef Name="Rbnr"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="AvisoTipUsr" sap:content-version="1"
+                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                <End Type="ZGWSD_PRIMERCONTACTO_SRV.Avisos" Multiplicity="1" Role="FromRole_AvisoTipUsr"/>
+                <End Type="ZGWSD_PRIMERCONTACTO_SRV.TipoUsuario" Multiplicity="*" Role="ToRole_AvisoTipUsr"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_AvisoTipUsr">
+                        <PropertyRef Name="Qmgrp"/>
+                        <PropertyRef Name="Rbnr"/>
+                        <PropertyRef Name="Artpr"/>
+                        <PropertyRef Name="Qmart"/>
+                        <PropertyRef Name="Qmnum"/>
+                        <PropertyRef Name="Werks"/>
+                        <PropertyRef Name="Arbpl"/>
+                    </Principal>
+                    <Dependent Role="ToRole_AvisoTipUsr">
+                        <PropertyRef Name="Qmgrp"/>
+                        <PropertyRef Name="Qmgrp"/>
+                        <PropertyRef Name="Qmgrp"/>
+                        <PropertyRef Name="Qmgrp"/>
+                        <PropertyRef Name="Qmgrp"/>
+                        <PropertyRef Name="Qmgrp"/>
+                        <PropertyRef Name="Qmgrp"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZGWSD_PRIMERCONTACTO_SRV" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="StatusSet" EntityType="ZGWSD_PRIMERCONTACTO_SRV.Status" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"
+                    xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                    <EntitySet Name="ConjuntoSet" EntityType="ZGWSD_PRIMERCONTACTO_SRV.Conjunto" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"
+                        xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                        <EntitySet Name="MaterialSet" EntityType="ZGWSD_PRIMERCONTACTO_SRV.Material" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"
+                            xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                            <EntitySet Name="PrioridadSet" EntityType="ZGWSD_PRIMERCONTACTO_SRV.Prioridad" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"
+                                xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                                <EntitySet Name="SintomaSet" EntityType="ZGWSD_PRIMERCONTACTO_SRV.Sintoma" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"
+                                    xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                                    <EntitySet Name="ParteSet" EntityType="ZGWSD_PRIMERCONTACTO_SRV.Parte" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"
+                                        xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                                        <EntitySet Name="CentroSet" EntityType="ZGWSD_PRIMERCONTACTO_SRV.Centro" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"
+                                            xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                                            <EntitySet Name="PuestoTrabajoSet" EntityType="ZGWSD_PRIMERCONTACTO_SRV.PuestoTrabajo" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"
+                                                xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                                                <EntitySet Name="TipoUsuarioSet" EntityType="ZGWSD_PRIMERCONTACTO_SRV.TipoUsuario" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"
+                                                    xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                                                    <EntitySet Name="AvisoSet" EntityType="ZGWSD_PRIMERCONTACTO_SRV.Avisos" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:requires-filter="true" sap:content-version="1"
+                                                        xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                                                        <AssociationSet Name="PrioridadAvisoSet" Association="ZGWSD_PRIMERCONTACTO_SRV.PrioridadAviso" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"
+                                                            xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                                                            <End EntitySet="AvisoSet" Role="FromRole_PrioridadAviso"/>
+                                                            <End EntitySet="PrioridadSet" Role="ToRole_PrioridadAviso"/>
+                                                        </AssociationSet>
+                                                        <AssociationSet Name="SintomaAvisoSet" Association="ZGWSD_PRIMERCONTACTO_SRV.SintomaAviso" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"
+                                                            xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                                                            <End EntitySet="AvisoSet" Role="FromRole_SintomaAviso"/>
+                                                            <End EntitySet="SintomaSet" Role="ToRole_SintomaAviso"/>
+                                                        </AssociationSet>
+                                                        <AssociationSet Name="AvisoConjuntoSet" Association="ZGWSD_PRIMERCONTACTO_SRV.AvisoConjunto" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"
+                                                            xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                                                            <End EntitySet="AvisoSet" Role="FromRole_AvisoConjunto"/>
+                                                            <End EntitySet="ConjuntoSet" Role="ToRole_AvisoConjunto"/>
+                                                        </AssociationSet>
+                                                        <AssociationSet Name="StatusAvisoSet" Association="ZGWSD_PRIMERCONTACTO_SRV.StatusAviso" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"
+                                                            xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                                                            <End EntitySet="AvisoSet" Role="FromRole_StatusAviso"/>
+                                                            <End EntitySet="StatusSet" Role="ToRole_StatusAviso"/>
+                                                        </AssociationSet>
+                                                        <AssociationSet Name="AvisoTipUsrSet" Association="ZGWSD_PRIMERCONTACTO_SRV.AvisoTipUsr" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"
+                                                            xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                                                            <End EntitySet="AvisoSet" Role="FromRole_AvisoTipUsr"/>
+                                                            <End EntitySet="TipoUsuarioSet" Role="ToRole_AvisoTipUsr"/>
+                                                        </AssociationSet>
+                                                        <AssociationSet Name="ParteAvisoSet" Association="ZGWSD_PRIMERCONTACTO_SRV.ParteAviso" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"
+                                                            xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                                                            <End EntitySet="AvisoSet" Role="FromRole_ParteAviso"/>
+                                                            <End EntitySet="ParteSet" Role="ToRole_ParteAviso"/>
+                                                        </AssociationSet>
+                                                    </EntityContainer>
+                                                    <atom:link rel="self" href="./sap/ZGWSD_PRIMERCONTACTO_SRV/$metadata"
+                                                        xmlns:atom="http://www.w3.org/2005/Atom"/>
+                                                        <atom:link rel="latest-version" href="./sap/ZGWSD_PRIMERCONTACTO_SRV/$metadata"
+                                                            xmlns:atom="http://www.w3.org/2005/Atom"/>
+                                                        </Schema>
+                                                    </edmx:DataServices>
+                                                </edmx:Edmx>
